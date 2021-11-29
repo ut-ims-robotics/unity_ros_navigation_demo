@@ -6,7 +6,7 @@ This repository contains the Unity project which is able to connect to Robotont 
 - ROS machine with ROS Noetic or real Robotont.
 - Unity side of things should be done on Windows machine
 - [Unity Hub](https://unity3d.com/get-unity/download)
-- [Unable Developer Mode on Hololens and Windows Machine](https://docs.microsoft.com/en-us/windows/mixed-reality/develop/advanced-concepts/using-visual-studio?tabs=hl2)
+- [Enable Developer Mode on Hololens and Windows Machine](https://docs.microsoft.com/en-us/windows/mixed-reality/develop/advanced-concepts/using-visual-studio?tabs=hl2)
 
 ## Installation
 
@@ -26,7 +26,7 @@ This repository contains the Unity project which is able to connect to Robotont 
     - During the installation make sure to check Visual Studio 2019, if you don't have it installed
     - And make sure to check Universal Windows Platform (UWP) Support and Windows build support. If you miss this step, you can add them later in the installs tab if you press 3 dots on the Unity version and choose Add Modules option
 5. After installation open the project. Skip the prompt about new unity version.
-6. MRTK will prompt you to choose the XR plugin. Choose OpenXR and follow the setup guide by provided by the MRTK window.
+6. MRTK will prompt you to choose the XR plugin. Choose OpenXR and follow the setup guide provided by the MRTK window.
 6. In the project panel navigate to Assets/Scenes and double click on RobotontNavigation. This will open the scene in unity.
 7. In the Hierarchy click on ROSConnectionPrefab game object.
 8. In Ros Connection (Script) change Ros IP Adress to the IP of your ROS machine.
@@ -39,7 +39,7 @@ This repository contains the Unity project which is able to connect to Robotont 
 14. Press build and choose folder where to save the built project.
 15. After building go to the specified folder and open the solution file.
 16. Go to Project -> Properties and to Debugging tab.
-17. Fill in Machine Name with the ip Hololens 2
+17. Fill in Machine Name with the ip address of the Hololens 2
 18. Under the menu bar change debug to release, ARM to ARM64 and set to remote machine and press start debugging.
 19. After deploying to Hololens, app will launch automatically, but you will be able to open it yourself from the app menu on the hololens
 
