@@ -516,6 +516,7 @@ MonoBehaviour:
   m_Name: MockDriver Standalone
   m_EditorClassIdentifier: 
   m_enabled: 0
+  <failedInitialization>k__BackingField: 0
   nameUi: Mock Driver
   version: 0.0.1
   featureIdInternal: com.unity.openxr.feature.mockdriver
@@ -706,7 +707,6 @@ MonoBehaviour:
   - {fileID: -5486388991411847717}
   - {fileID: -1174251576917399370}
   - {fileID: 1348970492415468080}
-  - {fileID: 2580344722881434032}
   - {fileID: -6744511041675891244}
   - {fileID: -4345521620200419918}
   - {fileID: -8758375616763223132}

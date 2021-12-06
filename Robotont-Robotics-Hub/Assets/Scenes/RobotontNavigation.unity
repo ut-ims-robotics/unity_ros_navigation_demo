@@ -7725,6 +7725,7 @@ GameObject:
   - component: {fileID: 1138074101}
   - component: {fileID: 1138074102}
   - component: {fileID: 1138074103}
+  - component: {fileID: 1138074104}
   m_Layer: 0
   m_Name: ROSCommunication
   m_TagString: Untagged
@@ -7810,6 +7811,25 @@ MonoBehaviour:
         z: 0
         w: 1
   to_test: 0
+--- !u!114 &1138074104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138074098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a03d88ee3f36f84589af545114afc8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _topicGlobalTrajectory: /move_base/TrajectoryPlannerROS/global_plan
+  _topicLocalTrajectory: /move_base/TrajectoryPlannerROS/local_plan
+  _globalTrajectoryFrame: {fileID: 1172606560}
+  _localTrajectoryFrame: {fileID: 1589966418}
+  _planPointPrefab: {fileID: 7032806212227121664, guid: c93e06f40acc2f344973e7f7daabb4b5, type: 3}
+  _globalPlanColor: {fileID: 2100000, guid: 9d966dfa24e16874bbd2fb5a99b2fe66, type: 2}
+  _localPlanColor: {fileID: 2100000, guid: 04033cae069e82841aabd091a3bfa985, type: 2}
 --- !u!1 &1143677735
 GameObject:
   m_ObjectHideFlags: 0
@@ -8233,6 +8253,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   geometryType: 3
+--- !u!1 &1172606560
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1172606561}
+  m_Layer: 0
+  m_Name: GlobalTrajectory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1172606561
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172606560}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2016545462}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1179658041
 GameObject:
   m_ObjectHideFlags: 0
@@ -10225,7 +10275,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3306610643280576239, guid: 39b05436fe65ff64aa4d3a996ec7d25e, type: 3}
       propertyPath: m_RosIPAddress
-      value: 192.168.200.12
+      value: 172.19.108.219
       objectReference: {fileID: 0}
     - target: {fileID: 3306610643280576239, guid: 39b05436fe65ff64aa4d3a996ec7d25e, type: 3}
       propertyPath: listenForTFMessages
@@ -10837,6 +10887,7 @@ Transform:
   m_Children:
   - {fileID: 13908371}
   - {fileID: 124507900}
+  - {fileID: 2016545462}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11500,6 +11551,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9090ae501ff9cd459bec5271d40249c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1589966418
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1589966419}
+  m_Layer: 0
+  m_Name: LocalTrajectory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1589966419
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589966418}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2016545462}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1591621526
 GameObject:
   m_ObjectHideFlags: 8
@@ -15472,6 +15553,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46398bc5d6905ad429a6d2d973afe002, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2016545461
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2016545462}
+  m_Layer: 0
+  m_Name: TrajectoriesFrame
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2016545462
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2016545461}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1172606561}
+  - {fileID: 1589966419}
+  m_Father: {fileID: 1450002461}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2029175778
 GameObject:
   m_ObjectHideFlags: 0

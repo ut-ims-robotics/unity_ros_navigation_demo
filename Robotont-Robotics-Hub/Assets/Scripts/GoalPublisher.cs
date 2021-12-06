@@ -14,6 +14,8 @@ public class GoalPublisher : MonoBehaviour
     [SerializeField]
     private GameObject _goalObject;
 
+    private Quaternion _goalRosRotation;
+
     public PoseStampedMsg _goal;
 
     public bool to_test = false;
@@ -35,7 +37,8 @@ public class GoalPublisher : MonoBehaviour
     void Update()
     {
         this._goal.pose.position = new PointMsg((float)_goalObject.transform.localPosition.z, -(float)_goalObject.transform.localPosition.x, (float)_goalObject.transform.localPosition.y);
-        this._goal.pose.orientation = new QuaternionMsg(0.0f, 0.0f, 0.0f, 1.0f);
+        _goalRosRotation.eulerAngles = new Vector3(_goalObject.transform.localRotation.eulerAngles.z, -_goalObject.transform.localRotation.eulerAngles.x, -_goalObject.transform.localRotation.eulerAngles.y);
+        this._goal.pose.orientation = new QuaternionMsg(_goalRosRotation.x, _goalRosRotation.y, _goalRosRotation.z, _goalRosRotation.w);
 
         if (to_test)
         {

@@ -18,8 +18,8 @@ public class OdomSubscriber : MonoBehaviour
 
     void OdomChange(RosOdom msg)
     {
-        Debug.Log(msg.pose.pose);
-        Debug.Log("called");
+        //Debug.Log(msg.pose.pose);
+        //Debug.Log("called");
 
 
         Quaternion ROSRotation = new Quaternion((float)msg.pose.pose.orientation.x, (float)msg.pose.pose.orientation.y, (float)msg.pose.pose.orientation.z, (float)msg.pose.pose.orientation.w);

@@ -10,6 +10,8 @@ public class CylinderPositioning : MonoBehaviour
     [SerializeField]
     private float _yCoordinate = 0.2f;
 
+    private Quaternion _intermidiateRotation;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,10 @@ public class CylinderPositioning : MonoBehaviour
     void Update()
     {
         _cylinder.transform.localPosition = new Vector3(_cylinder.transform.localPosition.x, _yCoordinate, _cylinder.transform.localPosition.z);
-        _cylinder.transform.localRotation = Quaternion.identity;
+        //_cylinder.transform.localRotation = Quaternion.identity; //x and z in euler rotation should be zero
+
+        _intermidiateRotation.eulerAngles = new Vector3(0.0f, _cylinder.transform.localRotation.eulerAngles.y, 0.0f);
+
+        _cylinder.transform.localRotation = _intermidiateRotation;
     }
 }
