@@ -58,9 +58,11 @@ This repository contains the Unity project which is able to connect to Robotont 
     - [robotont_nuc_description](https://github.com/robotont/robotont_nuc_description.git)
     - [robotont_navigation](https://github.com/robotont/robotont_navigation.git)
     - [robotont_demos](https://github.com/robotont/robotont_demos.git)
-2. Install realsense2-description `sudo apt install ros-noetic-realsense2-description`
-3. Install gmapping `sudo apt install ros-noetic-gmapping`
-4. Build workspace
+2. Clone [this repository](https://github.com/Unity-Technologies/ROS-TCP-Endpoint.git) into your catkin workspace.
+3. Open ROS-TCP-Endpoint/config/params.yaml and change ROS_IP to the IP of your ROS computer.
+4. Install realsense2-description `sudo apt install ros-noetic-realsense2-description`
+5. Install gmapping `sudo apt install ros-noetic-gmapping`
+6. Build workspace
 
 ## Running the setup
 
