@@ -84,3 +84,8 @@ Minimaze is going to be used.
 1. Make sure to be in the same network as ROS machine.
 2. Start the Robotont-Robotics-Hub app
 3. If the setup is done correctly,  Hololens will connect to the ROS machine and you will be able to set the goal for the robotont to while observing the movement. If map was left enabled, then it will also be displayed.
+
+
+### Changelog and link for later reference:
+
+- Started using Nuget for unity. [Link](https://github.com/GlitchEnzo/NuGetForUnity)

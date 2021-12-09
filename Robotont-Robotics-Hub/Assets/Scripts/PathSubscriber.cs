@@ -46,12 +46,29 @@ public class PathSubscriber : MonoBehaviour
 
         ROSConnection.GetOrCreateInstance().Subscribe<RosPath>(_topicGlobalTrajectory, GlobalTrajectoryCb);
         ROSConnection.GetOrCreateInstance().Subscribe<RosPath>(_topicLocalTrajectory, LocalTrajectoryCb);
+
+        //chake the frame_id of trajectories and change the parent of TrajectoriesFrame accordingly
     }
 
 
     void GlobalTrajectoryCb(RosPath msg)
     {
         _globalPlanPoints = msg.poses;
+        switch (msg.header.frame_id)
+        {
+            case "map":
+                _globalTrajectoryFrame.transform.parent = GameObject.Find("map").transform;
+                _globalTrajectoryFrame.transform.localPosition = Vector3.zero;
+                break;
+            case "odom":
+                _globalTrajectoryFrame.transform.parent = GameObject.Find("odom").transform;
+                _globalTrajectoryFrame.transform.localPosition = Vector3.zero;
+                break;
+            default:
+                _globalTrajectoryFrame.transform.parent = GameObject.Find("map").transform;
+                _globalTrajectoryFrame.transform.localPosition = Vector3.zero;
+                break;
+        }
 
         foreach (Transform child in _globalTrajectoryFrame.transform)
         {
@@ -77,6 +94,22 @@ public class PathSubscriber : MonoBehaviour
         foreach (Transform child in _localTrajectoryFrame.transform)
         {
             Destroy(child.gameObject);
+        }
+
+        switch (msg.header.frame_id)
+        {
+            case "map":
+                _localTrajectoryFrame.transform.parent = GameObject.Find("map").transform;
+                _localTrajectoryFrame.transform.localPosition = Vector3.zero;
+                break;
+            case "odom":
+                _localTrajectoryFrame.transform.parent = GameObject.Find("odom").transform;
+                _localTrajectoryFrame.transform.localPosition = Vector3.zero;
+                break;
+            default:
+                _localTrajectoryFrame.transform.parent = GameObject.Find("map").transform;
+                _localTrajectoryFrame.transform.localPosition = Vector3.zero;
+                break;
         }
 
         foreach (RosPoseStamped LocalPlanPose in _localPlanPoints)

@@ -34,7 +34,7 @@ public class MapSubscriber : MonoBehaviour
     void Start()
     {
         MapMesh = new GameObject("MapMesh");
-        MapMesh.transform.parent = GameObject.Find("RobotontNavigationFrame").transform;
+        MapMesh.transform.parent = GameObject.Find("map").transform;
 
         MapMesh.AddComponent<MeshFilter>();
         meshRenderer = MapMesh.AddComponent<MeshRenderer>();
