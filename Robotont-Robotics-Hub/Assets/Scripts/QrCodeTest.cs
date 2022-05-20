@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Microsoft.MixedReality.QR;
+//using Microsoft.MixedReality.OpenXR.Spa
 using System;
 
 public class QrCodeTest : MonoBehaviour
@@ -16,6 +17,7 @@ public class QrCodeTest : MonoBehaviour
 
     QRCodeWatcher watcher;
     DateTime watcherStart;
+    public Guid SpatialGraphNodeId { get; }
 
     // Start is called before the first frame update
     void Start()
