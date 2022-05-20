@@ -118,7 +118,7 @@ namespace QRTracking
                     IsTrackerRunning = true;
                     QRCodesTrackingStateChanged?.Invoke(this, true);
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     Debug.Log("QRCodesManager starting QRCodeWatcher Exception:" + ex.ToString());
                 }
@@ -219,7 +219,7 @@ namespace QRTracking
                     SetupQRTracking();
                 }
                 else
-                {  
+                {
                     Debug.Log("Capability access status : " + accessStatus);
                 }
             }

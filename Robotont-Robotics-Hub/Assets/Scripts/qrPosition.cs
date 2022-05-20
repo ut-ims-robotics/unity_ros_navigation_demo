@@ -18,8 +18,8 @@ public class qrPosition : MonoBehaviour
     {
         foreach (GameObject QR_code in QR_codes)
         {
-            QR_code.transform.position = transform.position;
-            QR_code.transform.rotation = transform.rotation;
+            QR_code.transform.position = gameObject.transform.position;
+            QR_code.transform.rotation = gameObject.transform.rotation;
 
         }
     }
